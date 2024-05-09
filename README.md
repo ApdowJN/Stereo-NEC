@@ -92,8 +92,6 @@ mkdir -p results/V203
 mv results/*.csv results/V203
 ```
 ## 5. Evaluation
-EuRoC includes ground truth data for each sequence referenced to the IMU body. Since purely visual methods produce trajectories centered in the left camera, we offer a transformation of the ground truth to the left camera reference in the 'evaluation' folder. Visual-inertial methods directly use the ground truth provided in the dataset.
-
 To process the sequences and calculate the ATE and RRE, run the provided script:
 ```
 conda create -n "evo_env"
