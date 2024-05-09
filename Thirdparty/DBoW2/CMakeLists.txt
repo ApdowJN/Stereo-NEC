@@ -29,8 +29,7 @@ set(SRCS_DUTILS
   DUtils/Timestamp.cpp)
 
 
-# find_package(OpenCV 4 QUIET)
-find_package(OpenCV REQUIRED PATHS "/home/wangweihan/Documents/opencv-4.7.0/local_install/lib/cmake/opencv4")
+find_package(OpenCV 4 QUIET)
 if(NOT OpenCV_FOUND)
    find_package(OpenCV 3.0 QUIET)
    if(NOT OpenCV_FOUND)

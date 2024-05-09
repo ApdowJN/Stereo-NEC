@@ -32,8 +32,7 @@ endif()
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
-find_package(OpenCV REQUIRED PATHS "/home/wangweihan/Documents/opencv-4.7.0/local_install/lib/cmake/opencv4")
-# find_package(OpenCV 4.4)
+find_package(OpenCV 4.4)
 if(NOT OpenCV_FOUND)
    message(FATAL_ERROR "OpenCV > 4.4 not found.")
 endif()
@@ -42,13 +41,11 @@ MESSAGE("OPENCV VERSION:")
 MESSAGE(${OpenCV_VERSION})
 
 find_package(Eigen3 REQUIRED)
-# find_package(Pangolin REQUIRED)
-find_package(Pangolin REQUIRED PATHS "/home/wangweihan/Documents/Pangolin/local_install/lib/cmake/Pangolin")
+find_package(Pangolin REQUIRED)
 find_package(realsense2)
 
 # Ceres
-# find_package(Ceres REQUIRED)
-find_package(Ceres REQUIRED PATHS "/home/wangweihan/Documents/ceres-solver-1.14.0/local_install/lib/cmake/Ceres")
+find_package(Ceres REQUIRED)
 include_directories(${CERES_INCLUDE_DIRS})
 
 include_directories(
