@@ -29,9 +29,10 @@ Separately estimating rotation using IMU integration and leverage precise rotati
 Download a sequence in ASL format by running the script we provided:
 ```
 chmod +x scripts/download_euroc_dataset.sh
+```
+```
 ./scripts/download_euroc_dataset.sh
 ```
-
 ## 2. Install Ceres (version 1.14.0)
 ### Start by installing all the dependencies:
 ```
@@ -74,9 +75,12 @@ mkdir -p results/XXXX
 ```
 ./Examples/Stereo-Inertial/stereo_inertial_euroc Vocabulary/ORBvoc.txt Examples/Stereo-Inertial/EuRoC.yaml PATH_TO_EuRoC_DATASET/XXX
 Examples/Stereo-Inertial/EuRoC_TimeStamps/XXXX.txt 
+```
+```
+# Ensure the results from each sequence are moved to the corresponding folder
 mv results/*.csv results/XXXX
 ```
-### Example of running the sequence V203:
+#### Example of running the sequence V203:
 ```
 mkdir -p results/V203
 ```
@@ -84,6 +88,7 @@ mkdir -p results/V203
 ./Examples/Stereo-Inertial/stereo_inertial_euroc Vocabulary/ORBvoc.txt Examples/Stereo-Inertial/EuRoC.yaml Dataset/EuRoC/V2_03_difficult Examples/Stereo-Inertial/EuRoC_TimeStamps/V203.txt 
 ```
 ```
+# Ensure the results from V203 are moved to the V203 folder
 mv results/*.csv results/V203
 ```
 ## 5. Evaluation
