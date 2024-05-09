@@ -1,6 +1,6 @@
 #!/bin/bash
-EUROC_PATH=PATH_TO_EuRoC #/home/weihanwang/Downloads/Datasets/EuRoC/
-EST_PATH=PATH_TO_RESULTS_FOLDER #/home/wangweihan/Documents/my_projects/Stereo-NEC/results/
+EUROC_PATH=PATH_TO_EuRoC #Stereo-NEC/Datasets/EuRoC/
+EST_PATH=PATH_TO_RESULTS_FOLDER #Stereo-NEC/results/
 evalset=(
     MH_01_easy
     MH_02_easy
@@ -14,14 +14,14 @@ evalset=(
     V2_02_medium
     V2_03_difficult
 )
-cd /home/weihanwang/Documents/ORB_SLAM3
+cd Stereo-NEC/ # Ensure you are in the Stereo-NEC folder.
 seqIndex=0
 seqName=("MH01" "MH02" "MH03" "MH04" "MH05" "V101" "V102" "V103" "V201" "V202" "V203") 
 for seq in ${evalset[@]}; do
     echo "Evaluate ours on $seq(${seqName[$seqIndex]})"
-    python scripts/test_euroc.py --est_folder_path=$EST_PATH/${seqName[$seqIndex]} --gt=$EUROC_PATH/$seq/mav0/state_groundtruth_estimate0/data.csv $@
+    python3 scripts/test_euroc.py --est_folder_path=$EST_PATH/${seqName[$seqIndex]} --gt=$EUROC_PATH/$seq/mav0/state_groundtruth_estimate0/data.csv $@
     echo "=================================================================================="
     echo "Evaluate ORB-SLAM3 on $seq(${seqName[$seqIndex]})"
-    python scripts/test_euroc.py --est_folder_path=$EST_PATH/${seqName[$seqIndex]} --gt=$EUROC_PATH/$seq/mav0/state_groundtruth_estimate0/data.csv $@
+    python3 scripts/test_euroc.py --est_folder_path=$EST_PATH/${seqName[$seqIndex]} --gt=$EUROC_PATH/$seq/mav0/state_groundtruth_estimate0/data.csv $@
     ((seqIndex++))
 done
