@@ -24,7 +24,7 @@ Separately estimating rotation using IMU integration and leverage precise rotati
 
 
 ## 1. Prepare the EuRoC Dataset
-[EuRoC dataset](http://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets) was recorded with two pinhole cameras and an inertial sensor. We provide an example script to launch EuRoC sequences in all the sensor configurations.
+[EuRoC dataset](http://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets) was recorded with two pinhole cameras and an inertial sensor. 
 
 Download a sequence in ASL format by running the script we provided:
 ```
@@ -92,7 +92,7 @@ mkdir -p results/V203
 mv results/*.csv results/V203
 ```
 ## 5. Evaluation
-To process the sequences and calculate the ATE and RRE, run the provided script:
+To process the sequences and calculate the ATE and RRE, run the script provided:
 ```
 conda create -n "evo_env"
 conda activate evo_env
